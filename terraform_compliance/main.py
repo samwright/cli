@@ -1,7 +1,7 @@
 import os
 from argparse import ArgumentParser
 from tempfile import mkdtemp
-from git import Repo
+#from git import Repo
 from terraform_compliance import __app_name__, __version__
 from terraform_compliance.common.readable_dir import ReadableDir
 from terraform_compliance.common.readable_plan import ReadablePlan
@@ -92,7 +92,7 @@ def cli(arghandling=ArgHandling(), argparser=ArgumentParser(prog=__app_name__,
 
         # Clone repository
         args.features = mkdtemp()
-        Repo.clone_from(url=features_git_repo, to_path=args.features, env=ssh_cmd, depth=1, branch=features_git_branch)
+        #Repo.clone_from(url=features_git_repo, to_path=args.features, env=ssh_cmd, depth=1, branch=features_git_branch)
 
     features_directory = os.path.join(os.path.abspath(args.features) + features_dir)
 
